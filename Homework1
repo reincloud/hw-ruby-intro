@@ -1,0 +1,194 @@
+# Part 1
+
+def sum arr
+  $i = 0
+  $j = 0
+  $temp = 0
+  print("Please enter a value for your array, enter -99 when finished")
+  chomp($temp = stdin)
+  #chomp($temp = <stdin>)
+  while ($temp != -99) 
+      
+      @nums[$i] = ($temp);
+      i++
+      print("Please enter a value for your array, enter -99 when finished")
+  end
+  
+  nums.each {|i| $j+=@nums[i]}  # check by printing j
+  for i in @nums.len
+      $j += @nums[$i];
+  end     
+  
+end
+
+def max_2_sum arr
+  $i = 0
+  $Max1 = 0
+  $Max2 = 0
+  $sum = 0
+  $temp = 0
+  print("Please enter a value for your array, enter -99 when finished")
+  chomp($temp = stdin)
+  while ($temp != -99)
+    
+      @nums[$i] = ($temp);
+      if($temp >= $Max1)
+        
+          $Max2 = $Max1
+          $Max1 = $temp
+      end
+      i++
+      print("Please enter a value for your array, enter -99 when finished")
+  end
+  $sum = $Max1 = $Max2
+  print("The sum of the two highest array values is", $sum)    
+end
+
+def sum_to_n? arr, n
+  $i = 0
+  $j = 0
+  print("Please enter a value for n.")
+  chomp($n = stdin)
+  print("Please enter a value for your array, enter -99 when finished")
+  chomp($temp = stdin)
+  while ($temp != -99)
+    
+      @nums[$i] = ($temp);
+      $i++
+      print("Please enter a value for your array, enter -99 when finished")
+  end
+      
+   for i in @nums.len
+   
+       for j in @nums.len
+         {
+           $k = @nums[$i]+@nums[$j]
+           if ($k == $n)
+            
+             print("sum = n")
+          end
+             
+            }
+    end   
+  
+end
+
+# Part 2
+
+def hello(name)
+  print("Please enter your name")
+  chomp($name = stdin)
+  print("Hello ", $name)
+end
+
+def starts_with_consonant? s
+  print("Please enter a string")
+  chomp($string = stdin)
+  if $string[0] =~ "b" or "B" or "c" or "C" or "d" or "D" or "f" or "F" or "g" or "G" or "h" or "H" or "j" or "J" or "k" or "K" or "l" or "L" or "m" or "M" or "n" or "N" or "p" or "P" or "q" or "Q" or "r" or "R" or "s" or "S" or "S" or "t" or "T" or "v" or "V" or "w" or "W" or "x" or "X" 
+    {
+      $s = true;
+      }
+    else
+    {
+      $s = false
+      }
+    print(s)
+end
+
+def binary_multiple_of_4? s
+  # YOUR CODE HERE
+# Part 3
+
+def  BookInStock
+  print("Please enter an ISBN")
+  chomp($isbn = stdin)
+  print("Please enter a price")
+  chomp($price = stdin)
+  price_as_string($price)
+end  
+
+def price_as_string (price)
+  print("$",price[0,1],".",price[2,3])
+
+# YOUR CODE HERE
+end
+
+
+#Part 2
+
+class dessert
+  puts("Please enter a name")
+  chomp($name=stdin)
+  puts("Please enter number of calories")
+  chomp(int $calories)
+  
+  healthy?($calories)
+end
+def healthy? calories
+  if calories <= 200
+    true
+  else
+    false
+  end  
+def delecious?
+  if flavor != "licorice"
+    true
+  else
+    false
+  end  
+end
+class jellybean < dessert
+  puts("Plese enter a flavor")
+  chomp($flavor=stdin)
+  $calories=5
+  $name = $flavor+ "jellybean"
+end
+
+#PART 3
+class rockPaperScissors
+  $j=2
+  for i in $j
+  puts("Please enter your name")
+  chomp($name=stdin)
+  puts("Please enter an R, P, or S")
+  chomp.downcase($value=stdin)
+  if value == "r"or"p"or"s"
+     myAry=Array.new(2)
+     myAry[i] = Array.new(name, value)
+  else
+    puts("NoSuchStrategy")
+  end
+  def theWinner winner
+    case[myAry(0,1),myAry(1,1)]
+      when ['r','r'],['s','s'],['p','p'],['s','p'],['r','s'],['p','r']
+        $winner = myAry[0]
+      else
+        $winner = myAry[1]
+      end  
+    puts("The winner is", winner)
+  end
+    
+end
+end  
+
+class tournament < rockPaperScissors
+  rockPaperScissors
+  $winner1 = winner
+  rockPaperScissors
+  $winner2 = winner
+  myAry[0] = ($winner1)
+  myAry[1] = ($winner2)
+  theWinner
+  $winnerA = winner
+  rockPaperScissors
+  $winner1 = winner
+  rockPaperScissors
+  $winner2 = winner
+  theWinner
+  $winnerB = winner
+  myAry[0] = ($winnerA)
+  myAry[1] = ($winnerB)
+  theWinner
+  $champion = winner
+  puts("The champion is", $champion)
+end
